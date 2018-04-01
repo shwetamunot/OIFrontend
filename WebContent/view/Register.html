@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="color:red" ng-if="error.code==1">{{error.message}}</div>
+
+<form name="myform" class="form-horizontal">
+
+  <div class="form-group">
+  <div style="color:red" ng-if="error.code==2">{{error.message}}</div>
+    <label class="control-label col-sm-2" for="username">Username:</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" id="username" placeholder="Enter username" ng-model="user.username" required>
+    </div>
+  </div>
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-7"> 
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="user.password" required>
+    </div>
+  </div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="firstname">FirstName:</label>
+    <div class="col-sm-7"> 
+      <input name="myName" type="text" class="form-control" id="firstname" placeholder="Enter firstname" ng-model="user.firstname" required>
+    <span ng-show="myform.myName.$touched && myform.myName.$invalid">The name is required.</span>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="lastname">LastName:</label>
+    <div class="col-sm-7"> 
+      <input name="myInput" type="text" class="form-control" id="lastname" placeholder="Enter lastname" ng-model="user.lastname" required>
+    </div>
+  </div>
+  <div class="form-group">
+<div style="color:red" ng-if="error.code==3">{{error.message}}</div>
+    <label class="control-label col-sm-2" for="email">Emailid:</label>
+    <div class="col-sm-7"> 
+      <input type="email" class="form-control" id="email" placeholder="Enter emailid" ng-model="user.email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="phonenumber">Phonenumber:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="phonenumber" placeholder="Enter phoneno" ng-model="user.phonenumber" required>
+    </div>
+  </div>
+   
+  <label class="control-label col-sm-2" for="role">Role:</label>
+   <div class="col-sm-7">
+   <div class="radio">
+  <label><input type="radio" name="optradio" ng-model="user.role" value="Student">STUDENT</label>
+  <label><input type="radio" name="optradio" ng-model="user.role" value="Employee">EMPLOYEE</label>
+ <label><input type="radio" name="optradio" ng-model="user.role" value="Alumini">ALUMINI</label>
+</div>  
+  </div>
+   <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success" value="Register" ng-click="register()">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+</body>
+</html>
+
+
